@@ -344,7 +344,7 @@ InfluxDB.prototype.query = function (databaseName, query, callback) {
   }
   var self = this
 
-  this.queryDB(query, {db: databaseName}, function (err, results) {
+  this.queryDB(query, {db: databaseName, epoch: 'ms'}, function (err, results) {
     if (err) {
       return callback(err, results)
     }
